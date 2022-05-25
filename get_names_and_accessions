@@ -1,3 +1,5 @@
+INPUT_LIST=$1
+
 if [[ ! -f "names_to_ID.hmdb_metabolites.txt" ]]; then
 
     if [[ ! -f "hmdb_metabolites.xml" ]]; then
@@ -15,11 +17,11 @@ if [[ ! -f "names_to_ID.hmdb_metabolites.txt" ]]; then
 
 fi
 
-awk 'BEGIN{FS="\t"; OFS="\t"} {print NR,$0}' list.txt  | sort -k2 > numbered.list.txt
-sort list.txt  > sorted.list.txt
+awk 'BEGIN{FS="\t"; OFS="\t"} {print NR,$0}' $INPUT_LIST | sort -k2 > numbered.$INPUT_LIST
+sort $INPUT_LIST  > sorted.$INPUT_LIST
 
-join -a 2 -t$'\t' names_to_ID.hmdb_metabolites.txt sorted.list.txt > name_sorted.combined.list.txt
+join -a 2 -t$'\t' names_to_ID.hmdb_metabolites.txt sorted.$INPUT_LIST > name_sorted.combined.$INPUT_LIST
 
-join -1 2 -2 1 -t$'\t' numbered.list.txt name_sorted.combined.list.txt | sort -t$'\t' -k2 > original_order.list.txt
+join -1 2 -2 1 -t$'\t' numbered.$INPUT_LIST name_sorted.combined.$INPUT_LIST | sort -t$'\t' -k2 > original_order.$INPUT_LIST
 
-awk 'BEGIN{FS="\t"; OFS="\t"} {print $1,$3}' original_order.list.txt > clean_original_order.list.txt
+awk 'BEGIN{FS="\t"; OFS="\t"} {print $1,$3}' original_order.$INPUT_LIST > clean_original_order.$INPUT_LIST
