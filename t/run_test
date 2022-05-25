@@ -1,0 +1,5 @@
+cd ..
+./get_names_and_accessions t/input/test_list.txt
+
+echo "If after running, nothing appears after this message, you're good to go!"
+diff t/expected/clean_original_order.list.txt t/input/clean_original_order.test_list.txt

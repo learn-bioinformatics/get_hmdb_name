@@ -1,0 +1,2 @@
+rm input/clean_original_order.test_list.txt input/name_sorted.combined.test_list.txt input/numbered.test_list.txt input/original_order.test_list.txt input/sorted.test_list.txt
+
