@@ -1,0 +1,5 @@
+1-Methylhistidine	HMDB0000001
+2-Hydroxybutyric acid	HMDB0000008
+1,3-Diaminopropane	HMDB0000002
+2-Methoxyestrone	HMDB0000010
+dihydrogen monoxide	
