@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e          # Will EXIT the script if any command returns a non-zero exit status.
 set -E          # Make ERR trapping work inside functions too.
 set -u          # Variables must be pre-defined before using them.
